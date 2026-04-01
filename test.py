@@ -7,4 +7,8 @@ from training_data import users
 
 user_lookup = {u["id"]: u for u in users}
 app = FastAPI()
-app.get("/get")
+app.get("/get-user/{user_id}")
+
+
+def get_user(user_id: int):
+    return user_lookup.get(user_id)
