@@ -3,8 +3,8 @@ import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "data"))
 from fastapi import FastAPI
-from training_data.js import users
+from training_data import users
 
 user_lookup = {u["id"]: u for u in users}
 app = FastAPI()
-app.get("\get")
+app.get("/get")
